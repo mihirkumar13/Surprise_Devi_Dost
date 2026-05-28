@@ -132,27 +132,40 @@
 
     /* Main Container */
 
-    .container{
+	.container{
 
-      width:90%;
-      max-width:550px;
+	  width:90%;
+	  max-width:550px;
 
-      background: rgba(255,255,255,0.08);
+	  background: rgba(255,255,255,0.08);
 
-      border:1px solid rgba(255,255,255,0.1);
+	  border:1px solid rgba(255,255,255,0.1);
 
-      backdrop-filter: blur(12px);
+	  backdrop-filter: blur(12px);
 
-      border-radius:25px;
+	  border-radius:25px;
 
-      padding:35px;
+	  padding:35px;
 
-      text-align:center;
+	  text-align:center;
 
-      box-shadow:0 10px 40px rgba(0,0,0,0.5);
+	  box-shadow:0 10px 40px rgba(0,0,0,0.5);
 
-      animation:fadeIn 1s ease;
-    }
+	  animation:fadeIn 1s ease;
+
+	  max-height:90vh;
+
+	  overflow-y:auto;
+	}
+	
+	.container::-webkit-scrollbar{
+	width:6px;
+	}
+
+	.container::-webkit-scrollbar-thumb{
+	  background:#ff4da6;
+	  border-radius:10px;
+	}
 
     @keyframes fadeIn{
 
@@ -290,7 +303,7 @@
 
       <div class="emoji">🎁</div>
 
-      <h1>Birthday Puzzle Challenge</h1>
+      <h1>Welcome Birthday Puzzle Challenge Shivani Ji 😊</h1>
 
       <p>
         Solve all the clues
@@ -310,13 +323,12 @@
 
     <div id="puzzle1" class="hidden">
 
-      <h1>Clue #1 🏏</h1>
+      <h1>Clue 1 🏏</h1>
 
       <p>
 
         Some people support teams,<br>
         some people support legends 😎<br><br>
-
         This team wears red,<br>
         breaks hearts every season,<br>
         but still has the most loyal fans ❤️<br><br>
@@ -343,7 +355,7 @@
 
     <div id="puzzle2" class="hidden">
 
-      <h1>Clue #2 🍨</h1>
+      <h1>Clue 2 🍨</h1>
 
       <p>
 
@@ -376,7 +388,7 @@
 
     <div id="puzzle3" class="hidden">
 
-      <h1>Clue #3 🥞</h1>
+      <h1>Clue 3 🥞</h1>
 
       <p>
 
@@ -454,19 +466,14 @@
 
       <p>
 
-        Wishing you happiness,<br>
-        good health,May your smile always shine bright,
-		your dreams come true,<br>
+        Wishing you happiness,good health,<br>
+		May your smile always shine bright,
+		your dreams come true,
 		and your life be filled with endless success 😊
-        and unlimited dosa + ice cream 😄
+        and unlimited dosa + Vada + ice cream 😄
 
       </p>
 
-      <p>
-	
-        And may RCB E saal cup Namdu ❤️
-
-      </p>
 
       <!-- ADD HER PHOTO HERE -->
 
@@ -478,11 +485,83 @@
 	  
 		
       <h2 style="margin-top:20px;">
-
         Have an amazing year ahead ✨
-
       </h2>
+	 
+		<button
+		class="btn"
+		onclick="claimGift()">
 
+		Claim Your Birthday Gift ✨
+
+		</button>
+
+		<!-- Hidden Gift Box -->
+
+		<div
+		id="giftBox"
+		style="
+		display:none;
+		opacity:0;
+		transition:0.5s;
+		margin-top:25px;
+		padding:20px;
+		border-radius:20px;
+		background:rgba(255,255,255,0.08);
+		border:1px solid rgba(255,255,255,0.2);
+		animation:fadeIn 1s ease;
+		">
+
+		<h2>🎁 Surprise Unlocked</h2>
+
+		<p style="margin-top:15px;">
+
+		Claim Your Birthday Gift ✨
+
+		</p>
+
+		<p style="
+		font-size:20px;
+		font-weight:bold;
+		margin-top:15px;
+		color:#ffd166;
+		">
+
+		Code: QWERTYUI
+
+		</p>
+
+		<p style="
+		font-size:18px;
+		margin-top:10px;
+		">
+
+		PIN: 123456
+
+		</p>
+
+		<p style="
+		margin-top:15px;
+		font-size:15px;
+		opacity:0.8;
+		">
+
+		A small birthday treat for you 🎁✨<br>
+		Enjoy your favorite food and ice cream on Swiggy 😄🍨
+
+		</p>
+
+
+		<button
+			class="btn"
+			onclick="openSwiggy()">
+
+			🛒 Open Swiggy Instamart
+
+		</button>
+
+		</div>
+	
     </div>
 
   </div>
@@ -573,9 +652,9 @@
       .toLowerCase()
       .trim();
 
-      if(ans === "dosa"){
+      if(ans === "dosa" || "Vada"){
 
-        alert("Dosa Lover 🥞");
+        alert("Dosa and Vada Lover 🥞");
 
         document
         .getElementById("puzzle3")
@@ -652,6 +731,35 @@
         document.body.appendChild(confetti);
       }
     }
+	
+	
+	function claimGift(){
+
+  let box =
+  document.getElementById("giftBox");
+
+  box.style.display = "block";
+
+  setTimeout(() => {
+
+    box.style.opacity = "1";
+
+  },100);
+}
+
+function openSwiggy(){
+
+  window.location.href =
+  "swiggy://instamart";
+
+  setTimeout(() => {
+
+    window.location.href =
+    "https://www.swiggy.com/instamart";
+
+  },1500);
+
+}
 
     /* Create Stars */
 
