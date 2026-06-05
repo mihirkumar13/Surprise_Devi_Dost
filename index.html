@@ -59,6 +59,23 @@
   animation: glow 3s infinite alternate;
 }
 
+.birthday-photo{
+
+  animation:
+  glow 3s infinite alternate;
+}
+
+.photo-magic{
+
+  animation:
+  glow 2s infinite alternate;
+
+  box-shadow:
+  0 0 20px gold,
+  0 0 40px gold,
+  0 0 80px #ffd700;
+}
+
 /* Glowing Animation */
 
 @keyframes glow{
@@ -116,6 +133,21 @@
       opacity:0.7;
       animation: twinkle 4s infinite ease-in-out;
     }
+	
+
+
+@keyframes explode{
+
+  0%{
+    transform:scale(0);
+    opacity:1;
+  }
+
+  100%{
+    transform:scale(8);
+    opacity:0;
+  }
+}
 
     @keyframes twinkle{
 
@@ -282,6 +314,210 @@
         transform:translateY(100vh) rotate(360deg);
       }
     }
+	
+.music-card{
+
+  margin-top:20px;
+
+  background:rgba(255,255,255,0.12);
+
+  border-radius:20px;
+
+  padding:15px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+.music-icon{
+
+  font-size:35px;
+}
+
+.music-text{
+
+  flex:1;
+
+  text-align:left;
+
+  margin-left:15px;
+
+  color:white;
+}
+
+.music-text span{
+
+  font-size:12px;
+
+  opacity:0.7;
+}
+
+.music-btn{
+
+  background:linear-gradient(
+  135deg,
+  #ff4da6,
+  #ff7ac3);
+
+  border:none;
+
+  color:white;
+
+  padding:12px 22px;
+
+  border-radius:50px;
+
+  cursor:pointer;
+
+  font-weight:bold;
+
+  transition:0.3s;
+
+  box-shadow:
+  0 5px 15px rgba(255,77,166,.35);
+}
+
+.music-btn:hover{
+
+  transform:scale(1.05);
+}
+
+
+.coupon-card{
+
+  margin-top:20px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  border-radius:20px;
+
+  padding:20px;
+}
+
+.coupon-label{
+
+  font-size:16px;
+
+  margin-bottom:10px;
+
+  opacity:0.9;
+}
+
+.coupon-code{
+
+  font-size:32px;
+
+  font-weight:bold;
+
+  color:#ffd166;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  user-select:none;
+}
+
+.coupon-code:hover{
+
+  transform:scale(1.05);
+
+  color:#fff;
+}
+
+.coupon-pin{
+
+  margin-top:15px;
+
+  font-size:20px;
+}
+
+
+#birthdayTitle{
+
+  min-height:40px;
+
+  color:#ffd166;
+
+  text-shadow:
+  0 0 10px #ffd166,
+  0 0 20px #ff4da6;
+
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+}
+
+.shooting-star{
+
+  position:fixed;
+
+  width:180px;
+  height:3px;
+
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,1),
+    rgba(255,215,0,0.8),
+    rgba(255,255,255,0)
+  );
+
+  box-shadow:
+    0 0 10px white,
+    0 0 20px gold,
+    0 0 40px gold;
+
+  border-radius:10px;
+
+  pointer-events:none;
+
+  z-index:9999;
+
+  animation:shoot 3s linear forwards;
+}
+
+@keyframes shoot{
+
+  from{
+
+    transform:
+    translate(0,0)
+    rotate(-35deg);
+
+    opacity:1;
+  }
+
+  to{
+
+    transform:
+    translate(-700px,700px)
+    rotate(-35deg);
+
+    opacity:0;
+  }
+}
 
   </style>
 
@@ -303,7 +539,7 @@
 
       <div class="emoji">🎁</div>
 
-      <h1>Welcome Birthday Puzzle Challenge Shivani Ji 😊</h1>
+      <h1>Welcome Birthday Puzzle Challenge Devi Dost 😊</h1>
 
       <p>
         Solve all the clues
@@ -458,7 +694,7 @@
 
       <div class="emoji">🎂</div>
 
-      <h1>Happy Birthday Devi Ji🎉</h1>
+    <h1 id="birthdayTitle"></h1>
 
       <p>
         You solved all the puzzles 🥳
@@ -466,18 +702,20 @@
 
       <p>
 
-        Wishing you happiness,good health,<br>
-		May your smile always shine bright,
-		your dreams come true,
-		and your life be filled with endless success 😊
-        and unlimited dosa + Vada + ice cream 😄
+        🎂Wishing you a year filled with happiness, good health, success, and countless beautiful memories.
+		   May your smile always shine bright and all your dreams come true ✨
+		   And of course... unlimited dosa, vada, and ice cream 😄🍨
 
       </p>
+	  <p style="opacity:0.8;">
+		🎉 Celebrating 9 June 🎉
+	  </p>
 
 
       <!-- ADD HER PHOTO HERE -->
 
       <img
+	  id="birthdayPhoto"
       src="photo1.png"
       class="birthday-photo"
       alt="Birthday Photo">
@@ -487,6 +725,40 @@
       <h2 style="margin-top:20px;">
         Have an amazing year ahead ✨
       </h2>
+	 
+	 <!-- Birthday Music -->
+
+<!-- Birthday Music -->
+
+	<div class="music-card">
+
+	  <div class="music-icon">
+		🎵
+	  </div>
+
+	  <div class="music-text">
+		Happy Birthday Shivani
+		<br>
+		<span> Play / Pause Birthday Song</span>
+	  </div>
+
+	  <button
+		class="music-btn"
+		onclick="toggleMusic()"
+		id="musicButton">
+
+		▶ Play
+
+	  </button>
+
+	</div>
+
+	<audio id="birthdayMusic">
+	  <source src="Bday.mpeg" type="audio/mpeg">
+	</audio>
+
+	<br>	 
+	 
 	 
 		<button
 		class="btn"
@@ -499,68 +771,109 @@
 		<!-- Hidden Gift Box -->
 
 		<div
-		id="giftBox"
-		style="
-		display:none;
-		opacity:0;
-		transition:0.5s;
-		margin-top:25px;
-		padding:20px;
-		border-radius:20px;
-		background:rgba(255,255,255,0.08);
-		border:1px solid rgba(255,255,255,0.2);
-		animation:fadeIn 1s ease;
-		">
+	id="giftBox"
+	style="
+	display:none;
+	opacity:0;
+	transition:0.5s;
+	margin-top:25px;
+	padding:20px;
+	border-radius:20px;
+	background:rgba(255,255,255,0.08);
+	border:1px solid rgba(255,255,255,0.2);
+	animation:fadeIn 1s ease;
+	">
 
-		<h2>🎁 Surprise 🎁</h2>
+	 <h2>🎁 Birthday Surprise 🎁</h2> 
+	  
 
-		<p style="margin-top:15px;">
+	  <p style="
+	  margin-top:15px;
+	  font-size:16px;
+	  opacity:0.9;
+	  ">
 
-		Claim Your Birthday Gift ✨
+	  A small birthday treat for you ✨
 
-		</p>
+	  </p>
 
-		<p style="
-		font-size:20px;
-		font-weight:bold;
-		margin-top:15px;
-		color:#ffd166;
-		">
+	  <!-- Coupon Card -->
 
-		Coupon Code: QWERTYUI
+<div class="coupon-card">
 
-		</p>
+  <div class="coupon-label">
+    🎁 Swiggy Gift Voucher
+  </div>
 
-		<p style="
-		font-size:18px;
-		margin-top:10px;
-		">
+  <div
+    class="coupon-code"
+    onclick="copyCode()"
+    title="Click to Copy">
 
-		PIN: 123456
+    QWERTYUI 📋
 
-		</p>
+  </div>
 
-		<p style="
-		margin-top:15px;
-		font-size:15px;
-		opacity:0.8;
-		">
+  <p class="coupon-pin">
+    PIN : 123456
+  </p>
 
-		A small birthday treat for you 🎁✨<br>
-		Enjoy your favorite food and ice cream on Swiggy 😄🍨
+</div>
 
-		</p>
+	  <p style="
+	  margin-top:20px;
+	  opacity:0.9;
+	  line-height:1.8;
+	  ">
 
+  Enjoy your favorite food,
+  dosa and ice cream 🍨😄
 
-		<button
+	</p>
+
+  <!-- Premium Gift Button -->
+
+  <div
+  class="gift-btn"
+  onclick="openSwiggyVoucher()">
+
+    <div class="gift-content">
+
+      <div class="gift-subtitle">
+
+        Birthday Treat Awaits 🎁
+
+      </div>
+
+    </div>
+	 </div>
+	
+
+   <button
 			class="btn"
-			onclick="openSwiggy()">
+			onclick="openSwiggyVoucher()">
 
-			🛒 Open Swiggy Instamart
+			🛒 Open Swiggy  <br>
 
-		</button>
+	</button>
+	 <p style="
+	  margin-top:20px;
+	  font-size:15px;
+	  opacity:0.75;
+	  line-height:1.6;
+	  ">
 
-		</div>
+	  Swiggy → Account → Swiggy Money → Redeem Voucher 🎁
+
+	  </p>
+
+  </div>
+
+ 
+
+</div>
+
+
 	
     </div>
 
@@ -695,7 +1008,11 @@
         .getElementById("final")
         .classList.remove("hidden");
 
-        startConfetti();
+		typeBirthdayTitle();
+		
+		startShootingStars();
+
+        
       }
 
       else{
@@ -704,33 +1021,34 @@
       }
     }
 
-    /* Confetti Animation */
+    /*  startMagicSparkles Animation */
 
-    function startConfetti(){
+  function startShootingStars(){
 
-      for(let i=0;i<150;i++){
+  setInterval(() => {
 
-        let confetti =
-        document.createElement("div");
+    let star =
+    document.createElement("div");
 
-        confetti.classList.add("confetti");
+    star.className =
+    "shooting-star";
 
-        confetti.style.left =
-        Math.random()*100 + "vw";
+    star.style.left =
+    Math.random() * window.innerWidth + "px";
 
-        confetti.style.animationDuration =
-        (Math.random()*3+2)+"s";
+    star.style.top =
+    Math.random() * 400 + "px";
 
-        confetti.style.background =
-        `hsl(${Math.random()*360},100%,50%)`;
+    document.body.appendChild(star);
 
-        confetti.style.width =
-        confetti.style.height =
-        Math.random()*8 + 5 + "px";
+    setTimeout(() => {
 
-        document.body.appendChild(confetti);
-      }
-    }
+      star.remove();
+
+    }, 3000);
+
+  }, 300);   // new star every 300ms
+}
 	
 	
 	function claimGift(){
@@ -747,6 +1065,7 @@
   },100);
 }
 
+<!--
 function openSwiggy(){
 
   window.location.href =
@@ -758,6 +1077,71 @@ function openSwiggy(){
     "https://www.swiggy.com/swiggy-money/redeem-voucher";
 
   },1500);
+
+}
+
+-->
+
+function openSwiggyVoucher(){
+
+  // Try opening Swiggy app
+
+  window.location.href =
+  "swiggy://swiggy-money/redeem-voucher";
+
+  // Fallback to website after 1.5 sec
+
+  setTimeout(() => {
+
+    window.location.href =
+    "https://www.swiggy.com";
+
+  },1500);
+
+}
+
+	function copyCode(){
+
+  navigator.clipboard.writeText("QWERTYUI");
+
+  const code =
+  document.querySelector(".coupon-code");
+
+  const original =
+  code.innerHTML;
+
+  code.innerHTML =
+  "✅ Copied!";
+
+  setTimeout(()=>{
+
+    code.innerHTML =
+    original;
+
+  },1500);
+}
+	
+function toggleMusic(){
+
+
+  const music =
+  document.getElementById("birthdayMusic");
+
+  const btn =
+  document.getElementById("musicButton");
+
+  if(music.paused){
+
+    music.play();
+
+    btn.innerHTML = " ⏸ Pause";
+
+  }
+  else 
+  music.pause();
+
+    btn.innerHTML = "▶ Play";
+
 
 }
 
@@ -783,6 +1167,35 @@ function openSwiggy(){
       .getElementById("stars")
       .appendChild(star);
     }
+	
+	
+	function typeBirthdayTitle(){
+
+  const title =
+  document.getElementById("birthdayTitle");
+
+  const text =
+  "🎂 Happy Birthday Shivani 🎉";
+
+  let index = 0;
+
+  title.innerHTML = "";
+
+  const interval = setInterval(() => {
+
+    title.innerHTML += text[index];
+
+    index++;
+
+    if(index >= text.length){
+
+      clearInterval(interval);
+
+    }
+
+  }, 100);
+
+}
 
   </script>
 
